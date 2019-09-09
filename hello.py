@@ -1,5 +1,6 @@
 from flask import Flask, Markup, escape, request, render_template, url_for
 from flask_bootstrap import Bootstrap
+import requests, os
 
 
 app = Flask(__name__)
@@ -27,3 +28,13 @@ def hello(name=None):
 # 	print(url_for('static', filename='style.css'))
 
 
+@app.route('/teapot')
+def teapot():
+	r = requests.get('http://httpbin.org/status/418')
+	return '<pre>' + r.text + '</pre>'
+
+
+@app.route('/env')
+def env():
+	times = os.getenv('TIMES', 3)
+	return "Hello! " * times
