@@ -36,5 +36,5 @@ def teapot():
 
 @app.route('/env')
 def env():
-	times = os.getenv('TIMES', 3)
+	times = int(os.getenv('TIMES', 3))
 	return "Hello! " * times
