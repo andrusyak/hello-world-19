@@ -1,0 +1,189 @@
+/*Bypass your cache in Google Chrome: Ctrl F5, Shift F5*/
+
+input[type=text], [type=password] {
+	border: none;
+ 	border-bottom: 2px solid MediumSeaGreen;
+ 	color: rgb(60, 60, 60);
+ 	font-size: 18px;
+	margin: 5px 10px;
+	padding: 10px 10px;
+	width: 75%;
+}
+
+textarea {
+	border: 2px solid MediumSeaGreen;
+	color: rgb(60, 60, 60);
+	font-size: 18px;
+	margin: 5px 10px;
+	padding: 10px 10px;
+	width: 75%;
+}
+
+input[type=submit], [type=reset], button {
+	background-color: MediumSeaGreen;
+	border: none;
+	color: white;
+	cursor: pointer;
+	font-size: 16px;
+	margin: 5px 10px;
+	padding: 12px 24px;
+}
+
+fieldset {
+	border: 3px solid MediumSeaGreen;
+	margin: 5px 10px;
+	padding: 20px 20px;
+	width: 750px;
+}
+
+input[type=search] {
+	border: 2px solid MediumSeaGreen;
+	border-radius: 4px;
+	color: rgb(60, 60, 60);
+	/*font-family: "Times New Roman";*/
+	font-size: 18px;
+	height: 50px;
+	margin: 15px 10px;
+	padding: 10px 10px;
+	width: 750px;
+}
+
+::-webkit-file-upload-button {
+	background-color: MediumSeaGreen;
+	border: none;
+	color: white;
+	cursor: pointer;
+	font-size: 16px;
+	padding: 12px 24px;
+}
+
+input[type=file] {
+	font-size: 18px;
+	border: 1px solid MediumSeaGreen;
+	color: rgb(60, 60, 60);;
+	cursor: pointer;
+	margin: 0px 20px;
+}
+
+span {
+	margin: 10px;
+}
+
+body {
+	background-image: url("594658-full-hd.jpg");
+	background-repeat: no-repeat; /*repeat-x;*/
+	background-attachment: fixed; /*scroll;*/
+	background-position: left top;
+	color: green;
+	margin: 50px 700px;
+}
+
+body#b01 {
+	background-image: url("586506-full-hd.jpg");
+	/*background-image: none;*/
+	background-position: right bottom;
+	color: #312a38;
+	margin: 50px 50px;
+}
+
+table {
+	background-color: rgba(106, 90, 205, 0.05);
+	border: 2px solid black;
+	border-collapse: collapse;
+	border-spacing: 5px;
+	margin: 10px 0;
+	width: 100%;
+}
+
+th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 10px 15px;
+	text-align: left;
+}
+
+tr:hover {background-color: #ccc;}
+
+table#t01 th {
+	background-color: #ccc;
+}
+
+table#t01 tr:nth-child(even) {
+	background-color: #eee;
+}
+
+table#t01 tr:nth-child(odd) {
+	background-color: #fff;
+}
+
+span#s01 {
+	color: red;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.respon {
+	height: 70%;
+	overflow-y: auto;
+	width: 75%;
+}
+
+.header {
+	background-color: #f1f1f1;
+	padding: 20px;
+	text-align: center;
+}
+
+.topnav {
+	background-color: #333;
+	overflow: hidden;
+}
+
+.topnav a {
+	color: #f2f2f2;
+	display: block;
+	float: left;
+	padding: 14px 16px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.topnav a#a01 {
+	float: right;
+}
+
+.topnav a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+.column {
+	float: left;
+	padding: 25px;
+	text-align: justify;
+	width: 33.33%;
+}
+
+.column.side {
+	width: 25%;
+}
+
+.column.middle {
+	width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+/* Responsive layout */
+@media screen and (max-width:600px) {
+	.column, .column.side, .column.middle {
+		width: 100%;
+	}
+}

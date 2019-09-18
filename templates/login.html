@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link rel="stylesheet" type="text/css" href="static/mystyle.css">
+		<!-- {{ bootstrap.load_css() }} -->
+		<!-- {{ bootstrap.load_js() }} -->
+	</head>
+
+	<body id="b01">
+
+		<div class="header">
+			{% if name %}
+				<h1>Hello, {{ name }}!</h1>
+			{% else %}
+				<h1>Hello, World!</h1>
+			{% endif %}
+		</div>
+		
+		<div class="row">
+
+			<div class="column side">
+				<h3>Column 1</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+			</div>
+			<div class="column middle">
+				<h3>Column 2</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+			</div>
+			<div class="column side">
+				<h3>Column 3</h3> 
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+			</div>
+
+		</div>
+
+		{% block content %}
+		{% endblock %}
+
+	</body>
+</html>

@@ -1,13 +1,37 @@
-<form action="hello\" method="post">
-	<fieldset>
-		<legend>Personal information:</legend>
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="static/mystyle.css">
+	</head>
 
-		First name:<br>
-		<input type="text" name="firstname" value="John"><br>
+	<body>
 
-		Last name:<br>
-		<input type="text" name="lastname" value="Doe"><br><br>
+		<form action="/" method="post">
+		<fieldset>
 
-		<input type="submit" value="Submit">
-	</fieldset>
-</form> 
+			<legend>Personal information:</legend>
+
+			<span>User name:</span><br>
+			<input type="text" name="username"  placeholder="Your user name" value={{ login }}><br><br>
+
+			<span>Password:</span><br>
+			<input type="password" name="password"  placeholder="Your password" value={{ psw }}><br><br>
+
+			<input type="submit" value="Submit">
+			<input type="reset">
+
+		</fieldset>
+		</form>
+
+		<br>
+		<form action="/search" method="get">
+
+			<span>Search Google:</span><br>
+			<input type="search" name="query"><br>
+
+			<input type="submit" value="Search">
+
+		</form>
+
+	</body>
+</html>

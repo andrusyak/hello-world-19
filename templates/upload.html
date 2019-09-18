@@ -1,0 +1,46 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="static/mystyle.css">
+</head>
+
+<body id="b01">
+
+	<div class="header">
+
+		<form action="/upload" method="post" enctype="multipart/form-data">
+			Select a file: <input type="file" name="myFile" accept=".csv">
+			<button>Submit</button>
+		</form>
+
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+					<span id="s01">{{ message }}</span>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+
+		{% if filename %}
+		<caption>File name: {{ filename }}</caption>
+		{% endif %}
+
+	</div>
+
+	{% if filename %}
+	<div class="topnav">
+		<a href="{{ url_for('upload_file', show='table') }}">Table</a>
+		<a href="{{ url_for('upload_file', show='image') }}">Plot</a>
+		<a href="{{ url_for('upload_file') }}" id="a01">Cansel</a>
+	</div>
+	{% endif %}
+
+	{% if table %}
+	<div class="respon">
+		{{ table }}
+	</div>
+	{% endif %}
+
+	{% if image %}
+	{{ image }}
+	{% endif %}
+	
+</body>
