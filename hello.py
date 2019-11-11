@@ -254,8 +254,10 @@ def hash_password(password):
 
 
 users = {
-	"john": hash_password("hello"),
-	"susan": hash_password("bye")
+	"john": b'\x16\x8fU\xb2\x18Q\x83\xce\x8c\x00&=$acZ:\x92\x17\x06H\xbfwT\x99\xa3s\xed\
+\xfe\xa3\xd2\x0c\x1b\xba\xd9\xd4\xde{-e9t\xa5\xe0C\n`\xb9\xe8\x80#\x89^\x88\xa7\x82!\xa3A"\x18L\xcc\x90',
+	"susan": b'\xbd\x8e\x1f\xf9Vy\x115\x88\x8d|w:uoZ\xa9!\x91\xb4A\xdbmOd\xb4E\xb2Eb\xbf\
+\xb6W\x9e@\x15eO#fm\x03\x13c\xe3\x89\x1a\x10r\xd5\x1cB\xbci\xd5\r\xbc5k\xf5\xf0\xe5\x08\x18'
 }
 
 
@@ -401,19 +403,22 @@ r = requests.post("http://localhost:5000/api/tasks", auth=auth, headers=headers,
 r = requests.put("http://localhost:5000/api/tasks/3", auth=auth, headers=headers, data='{"done": true}')
 r = requests.delete("http://localhost:5000/api/tasks/3", auth=auth)
 
+print("Status code:", r.status_code, end="\n\n")
+print("Response Headers:", r.headers, sep="\n", end="\n\n")
+print("JSON Response Content:", r.json(), sep="\n")
+print("JSON Response Content:", r.text, sep="\n")
+
 POST MULTIPART-ENCODED FILES
+Flask: request.files["file1"]
+
+curl -i -F "file1=@data/file1.jpg" http://localhost:5000/predict
+
 files = {
     "file1": open("data/file1.jpg", "rb"), 
     "file2": open("data/file2.jpg", "rb")
 }
 
 r = requests.post(url, auth=auth, files=files)
-# Flask: request.files["file1"]
-
-print("Status code:", r.status_code, end="\n\n")
-print("Response Headers:", r.headers, sep="\n", end="\n\n")
-print("JSON Response Content:", r.json(), sep="\n")
-print("JSON Response Content:", r.text, sep="\n")
 '''
 
 
@@ -426,4 +431,4 @@ print("JSON Response Content:", r.text, sep="\n")
 
 
 # if __name__ == '__main__':
-#   app.run(debug=True)
+# 	app.run(debug=True)
